@@ -4,32 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap" rel="stylesheet">
-    <script src="./assets/js/main.js" defer></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/main.js" defer></script>
     <title>Document</title>
 </head>
 <body>
-    <a href="">Ссылка на Github</a>
-    <div class="container">
-        <form action="" onsubmit="return false;" class="input_form">
-            <label for="">Введите имя</label>
-            <input type="text" class="input " id="name">
-            <label for="">Введите текст</label>
-            <input type="text" class="input " id="text">
-            <label for="">Выберите дату</label>
-            <input type="date" class="input" id="date">
-            <label for="">Введите Id пользователя</label>
-            <input type="text" class="input " id="id">
-            <label for="">Введите автора</label>
-            <input type="text" class="input " id="author">
-            <button class="add" id="add">Добавить</button>
-        </form>
-        <div class="main-list">
-
-        </div>
-    </div>
-</body>
+        <a href="https://github.com/wer2ewf23/pautina_js.git">github</a>
+        
+        <div class="page">
+            <div class="container">
+              <div class="page_content">
+                <div class="form">
+                  <label for="inputName" class="label">Название новости</label> <br />
+                  <input type="text" name="" id="inputName" class="input" /> <br />
+                  <br/>
+                  <label for="inputText" class="label">Описание новости</label> <br />
+                  <input type="text" name="" id="inputText" class="input" /> <br />
+                  <br/>
+                  <label for="inputAuthor" class="label">Автор новости</label> <br />
+                  <input type="text" name="" id="inputAuthor" class="input" />
+                  <br/><br />
+                  <label for="inputDate" class="label">Дата новости</label> <br />
+                  <input type="date" name="" id="inputDate" class="input" /> <br />
+                  <br/>
+                  <input type="submit" value="Добавить" id="submit" class="submit" />
+                </div>
+      
+                <div class="news"></div>
+              </div>
+            </div>
+          </div>
 </html>

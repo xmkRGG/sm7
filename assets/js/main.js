@@ -1,60 +1,54 @@
-let news = [];
+let news = []
+let maxId = 0;
 
-let inname = document.getElementById('name');
-let intext = document.getElementById('text');
-let indate = document.getElementById('date');
-let inid = document.getElementById('id');
-let inauthor = document.getElementById('author');
-let addButton = document.getElementById('add');
-let box = document.querySelector('.main-list');
+let inputName = document.getElementById('inputName')
+let inputText = document.getElementById('inputText')
+let inputAuthor = document.getElementById('inputAuthor')
+let inputDate = document.getElementById('inputDate')
+let submit = document.getElementById('submit')
+let newsPlace = document.querySelector(".news");
 
-
-
-function showNews(arr){
-    box.innerHTML= '';
-
-    for (let i = 0; i < news.length; i++){
-
-        box.insertAdjacentHTML('beforeend',
-        '<div class="list-content"><div class="content-title"><h1 class="name">'+news[i]['name']+'</h1> <p class="text">'+news[i]['date']+'</p></div> <div class="content-text">'+news[i]['text']+'</div> <div class="content-footer"><p class="subtitle">'+news[i]['author']+'</p><p class="id"> Id:'+news[i]['id']+'</p></div></div>');
-
-    }
+function showArray(arr){
+  arr.forEach(y => {
+    newsPlace.insertAdjacentHTML(
+      "beforeend",
+      `<div class="new">
+      <div class="name_date">
+        <h2 class="name">
+        ${y.name}
+        </h2>
+        <p class="date">${y.date}</p>
+      </div>
+      <p class="text">
+      ${y.text}         
+      </p>
+      <div class="author_id">
+        <p class="author"> ${y.author}</p>
+        <p class="id">id: ${y.id}</p>
+      </div>
+    </div>`
+    );
+  })
 }
 
-let key_name = 'name';
-let key_text = 'text';
-let key_id = 'id';
-let key_date = 'date';
-let key_author = 'author';
+
+function addArray(){
+  let object = { 
+    name: inputName.value , 
+    author: inputAuthor.value , 
+    date: inputDate.value , 
+    text: inputText.value , 
+    id: ++ maxId
+  }
+  news.push(object)
+  newsPlace.innerHTML = ''
+  inputName.value = ''
+  inputAuthor.value = ''
+  inputDate.value = ''
+  inputText.value = ''
+  showArray(news)
+}
+
+submit.addEventListener('click', addArray)
 
 
-
-addButton.addEventListener('click', function(){
-    let name = inname.value;
-    let text = intext.value;
-    let date = indate.value;
-    let id = inid.value;
-    let author = inauthor.value;
-
-    
-    news.push({
-        [key_name]:name,
-        [key_text]:text,
-        [key_id]:id,
-        [key_author]:author,
-        [key_date]:date
-
-
-
-
-    })
-    showNews(news)
-
-    inname.value = ''
-    intext.value = ''
-    indate.value = ''
-    inid.value = ''
-    inauthor.value = ''
-})
-
-console.log(news)

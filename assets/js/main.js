@@ -1,5 +1,5 @@
 let news = []
-let maxId = 0;
+let maxId = 100;
 
 let inputName = document.getElementById('inputName')
 let inputText = document.getElementById('inputText')
